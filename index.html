@@ -470,7 +470,7 @@
                 const code = circle.charCodeAt(0);
                 if (code >= 0x2460 && code <= 0x2468) return code - 0x245F; // ①-⑨
                 if (code === 0x2469) return 10; // ⑩
-                if (code >= 0x246A && code <= 0x2473) return code - 0x2469; // ⑪-⑳
+                if (code >= 0x246A && code <= 0x2473) return code - 0x246A + 11; // ⑪-⑳
                 return 0;
             });
         }
