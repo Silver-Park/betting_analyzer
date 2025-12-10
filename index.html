@@ -464,12 +464,13 @@
         }
 
         function extractNumbers(pair) {
-            // 동그라미 숫자를 추출 (①-⑩)
-            const matches = pair.match(/[①-⑩]/g) || [];
+            // 동그라미 숫자를 추출 (①-⑳)
+            const matches = pair.match(/[①-⑳]/g) || [];
             return matches.map(circle => {
                 const code = circle.charCodeAt(0);
                 if (code >= 0x2460 && code <= 0x2468) return code - 0x245F; // ①-⑨
                 if (code === 0x2469) return 10; // ⑩
+                if (code >= 0x246A && code <= 0x2473) return code - 0x2469; // ⑪-⑳
                 return 0;
             });
         }
